@@ -8,7 +8,7 @@ import os
 import json
 
 # Defining a few things
-prefix = os.environ.get("prefix")
+prefix = "-"
 bot = commands.Bot(command_prefix=prefix, case_insensitive=True)
 bot.config_token = os.environ.get("Token")
 logging.basicConfig(level=logging.INFO)

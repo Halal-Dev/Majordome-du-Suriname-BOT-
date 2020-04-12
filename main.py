@@ -72,7 +72,7 @@ async def user(ctx, member: discord.Member = None):
 
 
 @bot.command()
-@commands.has_role(698641412610326662) 
+@commands.has_role("modérateur")
 async def ban(ctx, member: discord.User = None, reason=None):
     if member == None or member == ctx.message.author:
         await ctx.channel.send("You cannot ban yourself!")
@@ -95,7 +95,7 @@ async def prefix(ctx):
 
 
 @bot.command()
-@commands.has_role(698641412610326662)
+@commands.has_role("modérateur")
     """
     Une commande pour effacer un certain nombres de messages
     """

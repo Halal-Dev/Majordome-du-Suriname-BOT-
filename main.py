@@ -10,7 +10,6 @@ import json
 # Defining a few things
 prefix = "-"
 bot = commands.Bot(command_prefix=prefix, case_insensitive=True)
-bot.config_token = os.environ.get("Token")
 logging.basicConfig(level=logging.INFO)
 
 
@@ -96,13 +95,11 @@ async def prefix(ctx):
 
 @bot.command()
 @commands.has_role("modérateur")
+async def clear(ctx, amount=64):
     """
     Une commande pour effacer un certain nombres de messages
     """
-async def clear(ctx, amount=64):
     await ctx.channel.purge(limit=amount)
-
-
 @bot.command()
 async def searchimg(ctx, *, thing=None):
     """
@@ -143,5 +140,5 @@ async def Help2(ctx):
                     value=f"All commands start with -\n `Ban` : Command to ban someone, usage : -ban <user> \n `setprefix` : command to change the prefix of the bot \n")
 
     await ctx.channel.send(embed=embed)
-    
-bot.run(bot.config_token)  # Runs our bot
+
+bot.run("Njk4MTAxNjE0ODU4MjA3MjYy.XpNPZQ.q8ccNlPi9Kbt4MV7-wPbufUKPjo")  # Runs our bot

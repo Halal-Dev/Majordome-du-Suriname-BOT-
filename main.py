@@ -25,7 +25,7 @@ async def on_ready():
 @bot.command(name='hi', aliases=['hello'])
 async def hi(ctx):
     """
-    A simple command which says hi to the author.
+    Une commande qui dit bonjour à celui qui l'éxecute
     """
     await ctx.send(f"Hi {ctx.author.mention}!")
     # Another way to do this code is (user object).mention
@@ -35,7 +35,7 @@ async def hi(ctx):
 @bot.command()
 async def echo(ctx, *, message=None):
     """
-    A simple command that repeats the users input back to them.
+    Une commande pour répéter le message envoyé
     """
     message = message or "Please provide the message to be repeated."
     await ctx.message.delete()
@@ -45,7 +45,7 @@ async def echo(ctx, *, message=None):
 @bot.command()
 async def ping(ctx):
     """
-    A simple command to get ping of the bot.
+    Une commande pour connaître la latence du bot
     """
     ping_ = bot.latency
     ping = round(ping_ * 1000)
@@ -54,6 +54,10 @@ async def ping(ctx):
 
 @bot.command()
 async def user(ctx, member: discord.Member = None):
+    """
+    Une commande pour savoir des infos sur quelqu'un
+    """
+
     if member == None:
         member = ctx.message.author
         pronoun = "Your"
@@ -92,6 +96,9 @@ async def prefix(ctx):
 
 @bot.command()
 @commands.has_role(698641412610326662)
+    """
+    Une commande pour effacer un certain nombres de messages
+    """
 async def clear(ctx, amount=64):
     await ctx.channel.purge(limit=amount)
 
@@ -99,7 +106,7 @@ async def clear(ctx, amount=64):
 @bot.command()
 async def searchimg(ctx, *, thing=None):
     """
-        A simple command to search an image (works with qwant image
+    Une commande pour chercher des images sur internet
     """
     thing_to_search = thing or "Please type what do you want to search"
     url = "https://api.qwant.com/api/search/images?count=50&q=" + thing_to_search + "&t=images&safesearch=1&locale=fr_FR&uiv=4"
@@ -120,8 +127,8 @@ async def searchimg(ctx, *, thing=None):
 @bot.command()
 async def credits(ctx):
     embed = discord.Embed(title="Credits", description="List of Authors", color=0x00ff00)
-    author = "@BaconFlex#5438"
-    locness = "@Locness#0031"
+    author = "@HalalFlex#5438"
+    locness = "Locness#0031"
     embed.add_field(name="Coding", value=f"{author}", inline=False)
     embed.add_field(name="qwant api code",
                     value=f"code of qwant api taken from {locness} : https://github.com/locness3/plateauschuhe-bot",

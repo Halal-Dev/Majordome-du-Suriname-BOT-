@@ -10,6 +10,7 @@ import json
 # Defining a few things
 prefix = "-"
 bot = commands.Bot(command_prefix=prefix, case_insensitive=True)
+bot.config_token = os.environ.get("Token")
 logging.basicConfig(level=logging.INFO)
 
 
@@ -141,4 +142,4 @@ async def Help2(ctx):
 
     await ctx.channel.send(embed=embed)
 
-bot.run("Njk4MTAxNjE0ODU4MjA3MjYy.XpNPZQ.q8ccNlPi9Kbt4MV7-wPbufUKPjo")  # Runs our bot
+bot.run(bot.config_token)  # Runs our bot
